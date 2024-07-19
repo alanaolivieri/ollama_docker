@@ -7,7 +7,7 @@ WORKDIR /workspace
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 # Python's requeriments
-RUN pip install --no-cache-dir jupyterlab requests pandas ollama
+RUN pip install --no-cache-dir pandas ollama
 
 # VSC's extensions
 RUN code-server --install-extension ms-python.python
@@ -16,8 +16,6 @@ RUN code-server --install-extension ms-toolsai.jupyter
 # ports
 # VSC
 EXPOSE 8080
-# jupyter
-EXPOSE 8888 
 # ollama
 EXPOSE 11434
 
