@@ -12,9 +12,8 @@ This guide provides instructions on how to set up and execute Ollama's models us
 #### Step-by-Step Guide
 1. Clone the Repository: First, clone your Git repository that contains the Docker setup and model files.
 
-2. Build and Run the Docker Containers: To start the project, enter the following command in the root of the project: <br> `docker-compose up -d` <br>
-Mode Detach (-d): This command runs the containers in the background, allowing you to execute other commands in the terminal.
-This will start a Jupyter Lab with all the necessary dependencies to begin working (ollama, pandas..).
+2. Build and Run the Docker Containers: To start the project, enter the following command in the root of the project: <br> `docker-compose up --build` <br>
+
 Note: Don't forget to `docker-compose down` when you are done.
 
 **Downloading Models**
