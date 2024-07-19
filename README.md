@@ -19,12 +19,7 @@ Note: Don't forget to `docker-compose down` when you are done.
 
 **Downloading Models**
 
-The API cannot automatically download each model, so after running docker-compose up -d, you need to manually pull each model. For the smallest model, run:
-`docker-compose exec ollama ollama pull tinyllama`
-If you are creating a new model from a Modelfile, you can do so with the following command:
-`docker-compose exec ollama ollama create analyze_tinyllama -f /workspace/modelfile_tinyllama`
-
-https://www.youtube.com/watch?v=DEcP4bkvHG4
+Upon starting the Docker container, the startup script is automatically executed. This script handles the downloading of the initial model and then creates a new model using a predefined modelfile.
 
 ![alt text](image.png)
 
