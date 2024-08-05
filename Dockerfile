@@ -7,7 +7,7 @@ WORKDIR /workspace
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 # Python's requeriments
-RUN pip install --no-cache-dir pandas ollama
+RUN pip install --no-cache-dir pandas ollama jupyter
 
 # VSC's extensions
 RUN code-server --install-extension ms-python.python
