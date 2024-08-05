@@ -16,6 +16,8 @@ RUN code-server --install-extension ms-toolsai.jupyter
 # ports
 # VSC
 EXPOSE 8080
+# Jupyter Lab
+EXPOSE 8888
 # ollama
 EXPOSE 11434
 
