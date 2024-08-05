@@ -14,8 +14,8 @@ RUN echo "Python executable path:" && which python
 RUN echo "Python site-packages path:" && python -m site
 
 # VSC's extensions
-RUN code-server --install-extension ms-python.python
-RUN code-server --install-extension ms-toolsai.jupyter
+# RUN code-server --install-extension ms-python.python
+# RUN code-server --install-extension ms-toolsai.jupyter
 
 # ports
 # VSC
