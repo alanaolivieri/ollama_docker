@@ -7,9 +7,9 @@ FLAG_FILE="/workspace/.model_initialized"
 
 if [ ! -f "$FLAG_FILE" ]; then
     
-    ollama pull tinyllama
+    ollama pull llama3.1:70b
     sleep 10
-    ollama create analyze_tinyllama -f /workspace/modelfile_tinyllama
+    ollama create analyze_llama3-1_70b -f /workspace/modelfile_llama3-1_70b
 
     touch "$FLAG_FILE"
 fi
