@@ -5,12 +5,19 @@
 
 FLAG_FILE="/workspace/.model_initialized"
 
-if [ ! -f "$FLAG_FILE" ]; then
-    
-    ollama pull llama3.1:70b
-    sleep 10
-    ollama create analyze_llama3-1_70b -f /workspace/modelfile_llama3-1_70b
+# Wait for the ollama container to be ready
+until docker exec ollama /bin/bash -c "echo ready"; do
+    echo "Waiting for ollama container..."
+    sleep 5
+done
 
+# Pull and create the model if not already initialized
+if [ ! -f "$FLAG_FILE" ]; then
+    echo "Pulling and creating the model in ollama container..."
+    docker exec ollama /bin/bash -c "
+        ollama pull llama3.1 &&
+        ollama create analyze_llama3-1 -f /workspace/modelfile_llama3-1
+    "
     touch "$FLAG_FILE"
 fi
 
