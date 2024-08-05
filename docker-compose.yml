@@ -23,6 +23,7 @@ services:
       - ollama
     ports:
       - "8080:8080"
+      - "8888:8888"
     environment:
       - 'OLLAMA_API_BASE_URL=http://ollama:11434/api'
     extra_hosts:
